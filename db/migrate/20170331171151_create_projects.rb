@@ -1,0 +1,13 @@
+class CreateProjects < ActiveRecord::Migration[5.0]
+  def change
+    create_table :projects do |t|
+      t.string :title
+      t.text :text
+      t.datetime :delivery_date
+      t.datetime :creation_date
+      t.string :category
+
+      t.timestamps
+    end
+  end
+end

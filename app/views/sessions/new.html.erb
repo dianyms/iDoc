@@ -1,0 +1,20 @@
+<%= form_for :session, url: sign_in_path do |f| %>
+
+<body class="body_form">
+     <div class="field">
+       <%= f.label :email %>
+       <%= f.email_field :email, autofocus: true, :class => "text_form" %>
+     </div>
+
+     <div class="field">
+       <%= f.label :password %>
+       <%= f.password_field :password, autocomplete: "off", :class => "text_form" %>
+     </div>
+     <div class="actions">
+       <%= f.submit "Entrar", :class => "button-form" %>
+     </div>
+    <br> <br> <br>
+   <p>Não tem uma conta? <%= link_to "Inscrever-se!", new_user_path %></p>
+
+</body>
+ <% end %>

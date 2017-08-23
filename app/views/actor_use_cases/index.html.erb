@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Actor Use Cases</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Actor</th>
+      <th>Use case</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @actor_use_cases.each do |actor_use_case| %>
+      <tr>
+        <td><%= actor_use_case.actor %></td>
+        <td><%= actor_use_case.use_case %></td>
+        <td><%= link_to 'Show', actor_use_case %></td>
+        <td><%= link_to 'Edit', edit_actor_use_case_path(actor_use_case) %></td>
+        <td><%= link_to 'Destroy', actor_use_case, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Actor Use Case', new_actor_use_case_path %>

@@ -1,0 +1,32 @@
+<%= form_for(use_case) do |f| %>
+  <% if use_case.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(use_case.errors.count, "error") %> prohibited this use_case from being saved:</h2>
+
+      <ul>
+      <% use_case.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :description %>
+    <%= f.text_area :description %>
+  </div>
+
+  <div class="field">
+    <%= f.label :project_id %>
+    <%= f.text_field :project_id %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Sequence:</strong>
+  <%= @step_scenario.sequence %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @step_scenario.description %>
+</p>
+
+<p>
+  <strong>Scenario:</strong>
+  <%= @step_scenario.scenario %>
+</p>
+
+<%= link_to 'Edit', edit_step_scenario_path(@step_scenario) %> |
+<%= link_to 'Back', step_scenarios_path %>
