@@ -1,4 +1,4 @@
-class UsersController < ApplicationController
+class UsersController < AdminController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
   before_action :authorize, except: [:new, :create]
 
@@ -21,6 +21,7 @@ class UsersController < ApplicationController
 
   # GET /users/1/edit
   def edit
+     @user = User.find(params[:id]) 
   end
 
   # POST /users
@@ -28,7 +29,7 @@ class UsersController < ApplicationController
   def create
       @user = User.new(user_params)
       if @user.save
-        redirect_to project_users_path, notice: "Usuário foi criado com sucesso!"
+        redirect_to admin_index_path, notice: "Usuário foi criado com sucesso!"
         sign_in
       else
         render action: :new

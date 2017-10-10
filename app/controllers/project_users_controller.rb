@@ -1,4 +1,4 @@
-class ProjectUsersController < ApplicationController
+class ProjectUsersController < AdminController
   before_action :set_project_user, only: [:show, :edit, :update, :destroy]
 
   # GET /project_users
@@ -10,14 +10,15 @@ class ProjectUsersController < ApplicationController
   # GET /project_users/1
   # GET /project_users/1.json
   def show
-    @project_users = ProjectUser.find(params[:user_id])
+    @project_users = ProjectUser.all
   end
-
+  
+  
   # GET /project_users/new
   def new
     @project_user = ProjectUser.new
   end
-
+  
   # GET /project_users/1/edit
   def edit
   end
@@ -25,6 +26,7 @@ class ProjectUsersController < ApplicationController
   # POST /project_users
   # POST /project_users.json
   def create
+    
     @project_user = ProjectUser.new(project_user_params)
 
     respond_to do |format|
@@ -65,7 +67,7 @@ class ProjectUsersController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_project_user
-      @project_user = ProjectUser.find(params[:id])
+      @project_user = ProjectUser.find_by user: (current_user.id)
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby "2.2.2"
+ruby "2.3.4"
 
 git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
@@ -13,6 +13,10 @@ gem 'rails', '~> 5.0.2'
 gem 'bcrypt'
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
+# A free, open source, Bootstrap admin theme created by Start Bootstrap
+gem 'bootstrap_sb_admin_base_v2'
+
+gem 'rails-assets-bootstrap', source: 'https://rails-assets.org'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -22,8 +26,6 @@ gem 'coffee-rails', '~> 4.2'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
-#BOOTSTRAṔ
-gem 'rails-assets-bootstrap', source: 'https://rails-assets.org'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

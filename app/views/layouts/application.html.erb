@@ -6,12 +6,13 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'home', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'home', 'data-turbolinks-track': 'reload' %>
+    
   </head>
 
   <body>
- <%= render 'layouts/header' %>
- <%= yield %>
- <%= render 'layouts/rodape' %>
+     <%= yield %>
  </body>
 
 </html>

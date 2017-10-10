@@ -44,6 +44,9 @@ GEM
     arel (7.1.4)
     bcrypt (3.1.11)
     bindex (0.5.0)
+    bootstrap_sb_admin_base_v2 (0.3.6)
+      font-awesome-rails
+      jquery-rails
     builder (3.2.3)
     byebug (9.0.6)
     capybara (2.13.0)
@@ -86,6 +89,8 @@ GEM
     factory_girl (4.8.0)
       activesupport (>= 3.0.0)
     ffi (1.9.18)
+    font-awesome-rails (4.7.0.2)
+      railties (>= 3.2, < 5.2)
     gherkin (4.1.1)
     globalid (0.3.7)
       activesupport (>= 4.1.0)
@@ -231,6 +236,7 @@ PLATFORMS
 
 DEPENDENCIES
   bcrypt
+  bootstrap_sb_admin_base_v2
   byebug
   coffee-rails (~> 4.2)
   cucumber-rails
@@ -258,7 +264,7 @@ DEPENDENCIES
   web-console (>= 3.3.0)
 
 RUBY VERSION
-   ruby 2.2.2p95
+   ruby 2.3.4p301
 
 BUNDLED WITH
-   1.12.5
+   1.15.4

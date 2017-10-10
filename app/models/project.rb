@@ -5,5 +5,4 @@ class Project < ApplicationRecord
   has_many :use_cases, :foreign_key => "project_id"
   has_many :actors, :foreign_key => "project_id"
   has_one :glossary, :foreign_key => "project_id"
-  belongs_to :user
 end
