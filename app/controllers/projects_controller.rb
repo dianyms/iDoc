@@ -62,7 +62,7 @@ class ProjectsController < AdminController
   # DELETE /projects/1.json
   def destroy
     @project.destroy
-    @project_user = ProjectUser.destroy.find_by project: (@project.id)
+    #@project_user = ProjectUser.destroy.find_by project: (@project.id)
     
     respond_to do |format|
       format.html { redirect_to projects_url, notice: 'Project was successfully destroyed.' }

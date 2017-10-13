@@ -1,4 +1,4 @@
-class ActorsController < ApplicationController
+class ActorsController < ProjectManagerController
   before_action :set_actor, only: [:show, :edit, :update, :destroy]
 
   # GET /actors

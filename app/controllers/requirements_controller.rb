@@ -1,4 +1,4 @@
-class RequirementsController < ApplicationController
+class RequirementsController < ProjectManagerController
   before_action :set_requirement, only: [:show, :edit, :update, :destroy]
 
   # GET /requirements

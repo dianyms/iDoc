@@ -1,4 +1,4 @@
-class UseCasesController < ApplicationController
+class UseCasesController < ProjectManagerController
   before_action :set_use_case, only: [:show, :edit, :update, :destroy]
 
   # GET /use_cases
