@@ -20,10 +20,10 @@
     <%= f.label :description %>
     <%= f.text_area :description %>
   </div>
-
+  
   <div class="field">
-    <%= f.label :project_id %>
-    <%= f.text_field :project_id %>
+     <%= f.label :requirement %>
+     <%= collection_select(:use_case, :requirement_id, Requirement.all, :id, :name) %>
   </div>
 
   <div class="actions">

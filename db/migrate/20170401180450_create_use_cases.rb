@@ -3,6 +3,7 @@ class CreateUseCases < ActiveRecord::Migration[5.0]
     create_table :use_cases do |t|
       t.string :name
       t.text :description
+      t.references :requirement, foreign_key: true
       t.references :project, foreign_key: true
 
       t.timestamps

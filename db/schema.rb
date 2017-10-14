@@ -12,21 +12,14 @@
 
 ActiveRecord::Schema.define(version: 20170401181929) do
 
-  create_table "actor_use_cases", force: :cascade do |t|
-    t.integer  "actor_id"
-    t.integer  "use_case_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-    t.index ["actor_id"], name: "index_actor_use_cases_on_actor_id"
-    t.index ["use_case_id"], name: "index_actor_use_cases_on_use_case_id"
-  end
-
   create_table "actors", force: :cascade do |t|
     t.string   "name"
+    t.integer  "use_case_id"
     t.integer  "project_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
     t.index ["project_id"], name: "index_actors_on_project_id"
+    t.index ["use_case_id"], name: "index_actors_on_use_case_id"
   end
 
   create_table "glossaries", force: :cascade do |t|
@@ -87,22 +80,15 @@ ActiveRecord::Schema.define(version: 20170401181929) do
     t.index ["scenario_id"], name: "index_step_scenarios_on_scenario_id"
   end
 
-  create_table "use_case_requirements", force: :cascade do |t|
-    t.integer  "use_case_id"
-    t.integer  "requirement_id"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
-    t.index ["requirement_id"], name: "index_use_case_requirements_on_requirement_id"
-    t.index ["use_case_id"], name: "index_use_case_requirements_on_use_case_id"
-  end
-
   create_table "use_cases", force: :cascade do |t|
     t.string   "name"
     t.text     "description"
+    t.integer  "requirement_id"
     t.integer  "project_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
     t.index ["project_id"], name: "index_use_cases_on_project_id"
+    t.index ["requirement_id"], name: "index_use_cases_on_requirement_id"
   end
 
   create_table "users", force: :cascade do |t|

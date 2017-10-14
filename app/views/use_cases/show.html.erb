@@ -1,19 +1,36 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @use_case.name %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @use_case.description %>
-</p>
-
-<p>
-  <strong>Project:</strong>
-  <%= @use_case.project %>
-</p>
-
-<%= link_to 'Edit', edit_use_case_path(@use_case) %> |
-<%= link_to 'Back', use_cases_path %>
+<!-- Page Content -->
+<div id="page-wrapper">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">Use Case</h1>
+                <p>
+                  <strong>Name:</strong>
+                  <%= @use_case.name %>
+                </p>
+                
+                <p>
+                  <strong>Description:</strong>
+                  <%= @use_case.description %>
+                </p>
+                
+                <p>
+                  <strong>Requisito:</strong>
+                  <%= @use_case.project %>
+                </p>
+                
+                <p>
+                  <strong>Requisito:</strong>
+                  <%= @use_case.requirement %>
+                </p>
+                
+                <%= link_to 'Edit', edit_use_case_path(@use_case) %> |
+                <%= link_to 'Back', use_cases_path %>
+            </div>
+            <!-- /.col-lg-12 -->
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- /.container-fluid -->
+</div>
+<!-- /#page-wrapper -->

@@ -14,23 +14,29 @@ class UseCasesController < ProjectManagerController
 
   # GET /use_cases/new
   def new
+    @requirement_options_select = Requirement.all
     @use_case = UseCase.new
   end
 
   # GET /use_cases/1/edit
   def edit
+    @requirement_options_select = Requirement.all
   end
 
   # POST /use_cases
   # POST /use_cases.json
   def create
     @use_case = UseCase.new(use_case_params)
+    @use_case.project_id = current_project.id
 
     respond_to do |format|
+      puts "AAAAAAAAANTES DO IF"
       if @use_case.save
+        puts "IIIIIIIIIIIIIIIIF"
         format.html { redirect_to @use_case, notice: 'Use case was successfully created.' }
         format.json { render :show, status: :created, location: @use_case }
       else
+        puts "EEEEEEEEEEEEEEELSE"
         format.html { render :new }
         format.json { render json: @use_case.errors, status: :unprocessable_entity }
       end
@@ -69,6 +75,6 @@ class UseCasesController < ProjectManagerController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def use_case_params
-      params.require(:use_case).permit(:name, :description, :project_id)
+      params.require(:use_case).permit(:name, :description, :requirement_id)
     end
 end
