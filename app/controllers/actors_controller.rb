@@ -15,16 +15,19 @@ class ActorsController < ProjectManagerController
   # GET /actors/new
   def new
     @actor = Actor.new
+    @use_case_options_select = UseCase.all
   end
 
   # GET /actors/1/edit
   def edit
+    @use_case_options_select = UseCase.all
   end
 
   # POST /actors
   # POST /actors.json
   def create
     @actor = Actor.new(actor_params)
+    @actor.project_id = current_project.id
 
     respond_to do |format|
       if @actor.save
@@ -69,6 +72,6 @@ class ActorsController < ProjectManagerController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def actor_params
-      params.require(:actor).permit(:name, :project_id)
+      params.require(:actor).permit(:name, :use_case_id)
     end
 end

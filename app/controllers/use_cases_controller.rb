@@ -14,8 +14,8 @@ class UseCasesController < ProjectManagerController
 
   # GET /use_cases/new
   def new
-    @requirement_options_select = Requirement.all
     @use_case = UseCase.new
+    @requirement_options_select = Requirement.all
   end
 
   # GET /use_cases/1/edit
@@ -30,13 +30,10 @@ class UseCasesController < ProjectManagerController
     @use_case.project_id = current_project.id
 
     respond_to do |format|
-      puts "AAAAAAAAANTES DO IF"
       if @use_case.save
-        puts "IIIIIIIIIIIIIIIIF"
         format.html { redirect_to @use_case, notice: 'Use case was successfully created.' }
         format.json { render :show, status: :created, location: @use_case }
       else
-        puts "EEEEEEEEEEEEEEELSE"
         format.html { render :new }
         format.json { render json: @use_case.errors, status: :unprocessable_entity }
       end

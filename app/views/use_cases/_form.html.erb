@@ -23,7 +23,7 @@
   
   <div class="field">
      <%= f.label :requirement %>
-     <%= collection_select(:use_case, :requirement_id, Requirement.all, :id, :name) %>
+     <%= collection_select(:use_case, :requirement_id, @requirement_options_select, :id, :name) %>
   </div>
 
   <div class="actions">
