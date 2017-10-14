@@ -28,12 +28,8 @@ class ProjectsController < AdminController
     @project = Project.new(project_params)
 
     respond_to do |format|
-      puts "antes do IFFFFFFF"
       if @project.save
-         puts "iffffffffffffff"
-         
         @project_user = ProjectUser.create(user_id: current_user.id, project_id: @project.id)
-        
          
         format.html { redirect_to @project, notice: 'Project was successfully created.' }
         format.json { render :show, status: :created, location: @project }

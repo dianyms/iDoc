@@ -24,13 +24,19 @@ class RequirementsController < ProjectManagerController
   # POST /requirements
   # POST /requirements.json
   def create
+    puts "CREAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAATE"
+    
     @requirement = Requirement.new(requirement_params)
+    @requirement.project_id = current_project.id
 
     respond_to do |format|
+      puts "SAAAAAAAAAAAAAAAAAAAAVE"
       if @requirement.save
+        puts "IFFFFFFFFFFFFFFFFFFFFFFF"
         format.html { redirect_to @requirement, notice: 'Requirement was successfully created.' }
         format.json { render :show, status: :created, location: @requirement }
       else
+        puts "EEEEEEEEEEEEEELSE"
         format.html { render :new }
         format.json { render json: @requirement.errors, status: :unprocessable_entity }
       end
@@ -69,6 +75,7 @@ class RequirementsController < ProjectManagerController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def requirement_params
-      params.require(:requirement).permit(:name, :description, :type, :project_id)
+      puts current_project.id
+      params.require(:requirement).permit(:name, :description, :requirement_type)
     end
 end
