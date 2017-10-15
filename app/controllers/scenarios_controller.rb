@@ -11,6 +11,7 @@ class ScenariosController < ProjectManagerController
   # GET /scenarios/1
   # GET /scenarios/1.json
   def show
+    set_current_scenario
   end
 
   # GET /scenarios/new

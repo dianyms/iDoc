@@ -4,7 +4,7 @@ class StepScenariosController < ProjectManagerController
   # GET /step_scenarios
   # GET /step_scenarios.json
   def index
-    @step_scenarios = StepScenario.all
+    @step_scenarios = StepScenario.where(scenario_id: current_scenario.id)
   end
 
   # GET /step_scenarios/1
@@ -25,6 +25,7 @@ class StepScenariosController < ProjectManagerController
   # POST /step_scenarios.json
   def create
     @step_scenario = StepScenario.new(step_scenario_params)
+    @step_scenario.scenario_id = current_scenario.id
 
     respond_to do |format|
       if @step_scenario.save
@@ -69,6 +70,6 @@ class StepScenariosController < ProjectManagerController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def step_scenario_params
-      params.require(:step_scenario).permit(:sequence, :description, :scenario_id)
+      params.require(:step_scenario).permit(:sequence, :description)
     end
 end
