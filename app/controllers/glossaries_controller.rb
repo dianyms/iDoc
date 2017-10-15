@@ -1,10 +1,10 @@
-class GlossariesController < ApplicationController
+class GlossariesController < ProjectManagerController
   before_action :set_glossary, only: [:show, :edit, :update, :destroy]
 
   # GET /glossaries
   # GET /glossaries.json
   def index
-    @glossaries = Glossary.all
+    @glossaries = Glossary.where(project_id: current_project.id)
   end
 
   # GET /glossaries/1
@@ -25,6 +25,7 @@ class GlossariesController < ApplicationController
   # POST /glossaries.json
   def create
     @glossary = Glossary.new(glossary_params)
+    @glossary.project_id = current_project.id
 
     respond_to do |format|
       if @glossary.save
@@ -69,6 +70,6 @@ class GlossariesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def glossary_params
-      params.require(:glossary).permit(:term, :description, :synonymous, :project_id)
+      params.require(:glossary).permit(:term, :description, :synonymous)
     end
 end

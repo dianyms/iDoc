@@ -5,7 +5,7 @@ class ScenariosController < ProjectManagerController
   # GET /scenarios.json
   def index
     options_for_select
-    @scenarios = Scenario.all
+    @scenarios = Scenario.where(project_id: current_project.id)
   end
 
   # GET /scenarios/1
