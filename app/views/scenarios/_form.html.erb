@@ -22,13 +22,13 @@
   </div>
 
   <div class="field">
-    <%= f.label :type %>
-    <%= f.text_field :type %>
+    <%= f.label :scenario_type %>
+    <%= f.text_field :scenario_type %>
   </div>
-
-  <div class="field">
-    <%= f.label :use_case_id %>
-    <%= f.text_field :use_case_id %>
+  
+   <div class="field">
+     <%= f.label :use_case_id %>
+     <%= collection_select(:scenario, :use_case_id, @usecase_options_select, :id, :name) %>
   </div>
 
   <div class="actions">

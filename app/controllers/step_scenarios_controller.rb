@@ -1,4 +1,4 @@
-class StepScenariosController < ApplicationController
+class StepScenariosController < ProjectManagerController
   before_action :set_step_scenario, only: [:show, :edit, :update, :destroy]
 
   # GET /step_scenarios

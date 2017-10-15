@@ -30,10 +30,10 @@
     <%= f.label :creation_date %>
     <%= f.datetime_select :creation_date %>
   </div>
-
-  <div class="field">
-    <%= f.label :category %>
-    <%= f.text_field :category %>
+  
+   <div class="field">
+     <%= f.label :category %>
+     <%= collection_select(:project, :category_id, @category_options_select, :id, :name) %>
   </div>
 
   <div class="actions">

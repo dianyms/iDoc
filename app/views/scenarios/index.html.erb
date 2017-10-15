@@ -5,6 +5,12 @@
             <div class="col-lg-12">
                 <h1 class="page-header">Scenario</h1>
                 <p id="notice"><%= notice %></p>
+                
+                <div class="actions">
+                  <%= collection_select(:scenario, :use_case_id, @usecase_options_select, :id, :name) %>
+                </div>
+              
+               
                 <table>
                   <thead>
                     <tr>
@@ -21,7 +27,7 @@
                       <tr>
                         <td><%= scenario.name %></td>
                         <td><%= scenario.description %></td>
-                        <td><%= scenario.type %></td>
+                        <td><%= scenario.scenario_type %></td>
                         <td><%= scenario.use_case %></td>
                         <td><%= link_to 'Show', scenario %></td>
                         <td><%= link_to 'Edit', edit_scenario_path(scenario) %></td>

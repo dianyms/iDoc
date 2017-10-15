@@ -4,6 +4,7 @@ class ScenariosController < ProjectManagerController
   # GET /scenarios
   # GET /scenarios.json
   def index
+    options_for_select
     @scenarios = Scenario.all
   end
 
@@ -15,10 +16,12 @@ class ScenariosController < ProjectManagerController
   # GET /scenarios/new
   def new
     @scenario = Scenario.new
+    options_for_select
   end
 
   # GET /scenarios/1/edit
   def edit
+    options_for_select
   end
 
   # POST /scenarios
@@ -62,6 +65,11 @@ class ScenariosController < ProjectManagerController
   end
 
   private
+    #Options UseCase for selection
+    def options_for_select
+      @usecase_options_select = UseCase.where(project_id: current_project.id)
+    end
+    
     # Use callbacks to share common setup or constraints between actions.
     def set_scenario
       @scenario = Scenario.find(params[:id])
@@ -69,6 +77,6 @@ class ScenariosController < ProjectManagerController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def scenario_params
-      params.require(:scenario).permit(:name, :description, :type, :use_case_id)
+      params.require(:scenario).permit(:name, :description, :scenario_type, :use_case_id)
     end
 end

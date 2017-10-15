@@ -5,7 +5,7 @@ class CreateProjects < ActiveRecord::Migration[5.0]
       t.text :text
       t.datetime :delivery_date
       t.datetime :creation_date
-      t.string :category
+      t.references :category, foreign_key: true
 
       t.timestamps
     end

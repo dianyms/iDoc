@@ -4,12 +4,13 @@ class RequirementsController < ProjectManagerController
   # GET /requirements
   # GET /requirements.json
   def index
-    @requirements = Requirement.all
+    @requirements = Requirement.where(project_id: current_project.id)
   end
 
   # GET /requirements/1
   # GET /requirements/1.json
   def show
+    @requirements = Requirement.where(project_id: current_project.id)
   end
 
   # GET /requirements/new
@@ -24,19 +25,14 @@ class RequirementsController < ProjectManagerController
   # POST /requirements
   # POST /requirements.json
   def create
-    puts "CREAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAATE"
-    
     @requirement = Requirement.new(requirement_params)
     @requirement.project_id = current_project.id
 
     respond_to do |format|
-      puts "SAAAAAAAAAAAAAAAAAAAAVE"
       if @requirement.save
-        puts "IFFFFFFFFFFFFFFFFFFFFFFF"
         format.html { redirect_to @requirement, notice: 'Requirement was successfully created.' }
         format.json { render :show, status: :created, location: @requirement }
       else
-        puts "EEEEEEEEEEEEEELSE"
         format.html { render :new }
         format.json { render json: @requirement.errors, status: :unprocessable_entity }
       end

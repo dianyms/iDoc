@@ -1,24 +1,39 @@
-<p id="notice"><%= notice %></p>
+<!-- Page Content -->
+<div id="page-wrapper">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">Show Scenario</h1>
+                <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @scenario.name %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @scenario.description %>
-</p>
-
-<p>
-  <strong>Type:</strong>
-  <%= @scenario.type %>
-</p>
-
-<p>
-  <strong>Use case:</strong>
-  <%= @scenario.use_case %>
-</p>
-
-<%= link_to 'Edit', edit_scenario_path(@scenario) %> |
-<%= link_to 'Back', scenarios_path %>
+                <p>
+                  <strong>Name:</strong>
+                  <%= @scenario.name %>
+                </p>
+                
+                <p>
+                  <strong>Description:</strong>
+                  <%= @scenario.description %>
+                </p>
+                
+                <p>
+                  <strong>Type:</strong>
+                  <%= @scenario.scenario_type %>
+                </p>
+                
+                <p>
+                  <strong>Use case:</strong>
+                  <%= @scenario.use_case %>
+                </p>
+                
+                <%= link_to 'Edit', edit_scenario_path(@scenario) %> |
+                <%= link_to 'Back', scenarios_path %> |
+                <%= link_to 'Criar passo', new_step_scenario_path %>
+            </div>
+            <!-- /.col-lg-12 -->
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- /.container-fluid -->
+</div>
+<!-- /#page-wrapper -->

@@ -4,7 +4,7 @@ class ActorsController < ProjectManagerController
   # GET /actors
   # GET /actors.json
   def index
-    @actors = Actor.all
+    @actors = Actor.where(project_id: current_project.id)
   end
 
   # GET /actors/1
@@ -15,12 +15,12 @@ class ActorsController < ProjectManagerController
   # GET /actors/new
   def new
     @actor = Actor.new
-    @use_case_options_select = UseCase.all
+    @use_case_options_select = UseCase.where(project_id: current_project.id)
   end
 
   # GET /actors/1/edit
   def edit
-    @use_case_options_select = UseCase.all
+    @use_case_options_select = UseCase.where(project_id: current_project.id)
   end
 
   # POST /actors

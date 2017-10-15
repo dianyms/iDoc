@@ -16,10 +16,12 @@ class ProjectsController < AdminController
   # GET /projects/new
   def new
     @project = Project.new
+    @category_options_select = Category.where(user_id: current_user.id)
   end
 
   # GET /projects/1/edit
   def edit
+     @category_options_select = Category.where(user_id: current_user.id)
   end
 
   # POST /projects
@@ -74,7 +76,7 @@ class ProjectsController < AdminController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def project_params
-      params.require(:project).permit(:title, :text, :delivery_date, :creation_date, :category)
+      params.require(:project).permit(:title, :text, :delivery_date, :creation_date, :category_id)
     end
     
     def project_user_params

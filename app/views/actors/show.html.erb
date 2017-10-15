@@ -1,14 +1,28 @@
-<p id="notice"><%= notice %></p>
+<!-- Page Content -->
+<div id="page-wrapper">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">Show actor</h1>
+                <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @actor.name %>
-</p>
-
-<p>
-  <strong>Project:</strong>
-  <%= @actor.project %>
-</p>
-
-<%= link_to 'Edit', edit_actor_path(@actor) %> |
-<%= link_to 'Back', actors_path %>
+                <p>
+                  <strong>Name:</strong>
+                  <%= @actor.name %>
+                </p>
+                
+                <p>
+                  <strong>Project:</strong>
+                  <%= @actor.project %>
+                </p>
+                
+                <%= link_to 'Edit', edit_actor_path(@actor) %> |
+                <%= link_to 'Back', actors_path %>
+            </div>
+            <!-- /.col-lg-12 -->
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- /.container-fluid -->
+</div>
+<!-- /#page-wrapper -->

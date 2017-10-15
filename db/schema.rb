@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170401181929) do
+ActiveRecord::Schema.define(version: 20171015210301) do
 
   create_table "actors", force: :cascade do |t|
     t.string   "name"
@@ -20,6 +20,14 @@ ActiveRecord::Schema.define(version: 20170401181929) do
     t.datetime "updated_at",  null: false
     t.index ["project_id"], name: "index_actors_on_project_id"
     t.index ["use_case_id"], name: "index_actors_on_use_case_id"
+  end
+
+  create_table "categories", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_categories_on_user_id"
   end
 
   create_table "glossaries", force: :cascade do |t|
@@ -46,9 +54,10 @@ ActiveRecord::Schema.define(version: 20170401181929) do
     t.text     "text"
     t.datetime "delivery_date"
     t.datetime "creation_date"
-    t.string   "category"
+    t.integer  "category_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
+    t.index ["category_id"], name: "index_projects_on_category_id"
   end
 
   create_table "requirements", force: :cascade do |t|
@@ -64,10 +73,12 @@ ActiveRecord::Schema.define(version: 20170401181929) do
   create_table "scenarios", force: :cascade do |t|
     t.string   "name"
     t.text     "description"
-    t.string   "type"
+    t.string   "scenario_type"
     t.integer  "use_case_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.integer  "project_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.index ["project_id"], name: "index_scenarios_on_project_id"
     t.index ["use_case_id"], name: "index_scenarios_on_use_case_id"
   end
 

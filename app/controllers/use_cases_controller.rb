@@ -4,7 +4,7 @@ class UseCasesController < ProjectManagerController
   # GET /use_cases
   # GET /use_cases.json
   def index
-    @use_cases = UseCase.all
+    @use_cases = UseCase.where(project_id: current_project.id)
   end
 
   # GET /use_cases/1
@@ -15,12 +15,12 @@ class UseCasesController < ProjectManagerController
   # GET /use_cases/new
   def new
     @use_case = UseCase.new
-    @requirement_options_select = Requirement.all
+    @requirement_options_select = Requirement.where(project_id: current_project.id)
   end
 
   # GET /use_cases/1/edit
   def edit
-    @requirement_options_select = Requirement.all
+    @requirement_options_select = Requirement.where(project_id: current_project.id)
   end
 
   # POST /use_cases
