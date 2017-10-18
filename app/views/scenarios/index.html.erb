@@ -2,50 +2,69 @@
 <div id="page-wrapper">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-lg-12">
-                <h1 class="page-header">Scenario</h1>
-                <p id="notice"><%= notice %></p>
-                
-                <div class="actions">
-                  <%= collection_select(:scenario, :use_case_id, @usecase_options_select, :id, :name) %>
-                </div>
+            <h2 class="page-header"> Cenários </h2>
+              <!-- NOTIFICACAO -->
+              <% if notice %>
+                 <div class="alert alert-success alert-dismissable">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                    <%= notice %>
+                 </div>
+              <% end %>
               
-               
-                <table>
-                  <thead>
-                    <tr>
-                      <th>Name</th>
-                      <th>Description</th>
-                      <th>Type</th>
-                      <th>Use case</th>
-                      <th colspan="3"></th>
-                    </tr>
-                  </thead>
-                
-                  <tbody>
+            <div class="panel panel-default">
+              <div class="panel-heading"> 
+                   <i class="fa fa-briefcase fa-fw"></i> 
+                   Cenários 
+              </div>
+              <!-- /.panel-heading -->
+              <div class="panel-body">
+                <div class="table-responsive">
+                  <label>Filtra por Caso de Uso</label>
+                  <%= collection_select(:scenario, :use_case_id, @usecase_options_select, :id, :name, {}, {class: "form-control"}) %>
+                  <br>
+                  <table class="table table-striped table-bordered table-hover">
+                    <thead>
+                      <tr>
+                        <th>Nome</th>
+                        <th>Descrição</th>
+                        <th>Tipo</th>
+                        <th>Caso de Uso</th>
+                        <th></th>
+                      </tr>
+                    </thead>
+                    
+                    <tbody>
                     <% @scenarios.each do |scenario| %>
                       <tr>
                         <td><%= scenario.name %></td>
                         <td><%= scenario.description %></td>
                         <td><%= scenario.scenario_type %></td>
-                        <td><%= scenario.use_case %></td>
-                        <td><%= link_to 'Show', scenario %></td>
-                        <td><%= link_to 'Edit', edit_scenario_path(scenario) %></td>
-                        <td><%= link_to 'Destroy', scenario, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                        <td><%= scenario.use_case.name %></td>
+                        <td><%= link_to scenario, class: "btn default btn-xs red" do %>
+                              <i class="fa fa-edit fa-fw"></i>  
+                              Gerenciar
+                           <% end %> 
+                       
+                        <%= link_to edit_scenario_path(scenario), class: "btn default btn-xs purple" do %>
+                              <i class="fa fa-edit fa-fw"></i>  
+                              Editar
+                        <% end %> 
+                       <button type="submit" class="btn default btn-xs black"><i class="fa  fa-times fa-fw"></i> Excluir</button></td>
                       </tr>
                     <% end %>
                   </tbody>
-                </table>
-                
-                <br>
-                
-                <%= link_to 'New Scenario', new_scenario_path %>
-                
+                    </table>
+                  </div>
+                  <!-- /.table-responsive -->
+                </div>
+                <!-- /.panel-body -->
             </div>
-            <!-- /.col-lg-12 -->
-        </div>
-        <!-- /.row -->
+          <!-- /.col-lg-12 -->
+      </div>
+      <!-- /.row -->
     </div>
     <!-- /.container-fluid -->
 </div>
 <!-- /#page-wrapper -->
+
+

@@ -31,7 +31,7 @@ class UseCasesController < ProjectManagerController
 
     respond_to do |format|
       if @use_case.save
-        format.html { redirect_to @use_case, notice: 'Use case was successfully created.' }
+        format.html { redirect_to use_cases_path, notice: "Caso de Uso (#{@use_case.name}) cadastrado com sucesso!" }
         format.json { render :show, status: :created, location: @use_case }
       else
         format.html { render :new }
@@ -45,7 +45,7 @@ class UseCasesController < ProjectManagerController
   def update
     respond_to do |format|
       if @use_case.update(use_case_params)
-        format.html { redirect_to @use_case, notice: 'Use case was successfully updated.' }
+        format.html { redirect_to use_cases_path, notice: "Caso de Uso (#{@use_case.name}) cadastrado com sucesso!" }
         format.json { render :show, status: :ok, location: @use_case }
       else
         format.html { render :edit }

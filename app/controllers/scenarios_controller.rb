@@ -12,6 +12,7 @@ class ScenariosController < ProjectManagerController
   # GET /scenarios/1.json
   def show
     set_current_scenario
+    @step_scenarios = StepScenario.where(scenario_id: current_scenario.id)
   end
 
   # GET /scenarios/new
@@ -29,10 +30,11 @@ class ScenariosController < ProjectManagerController
   # POST /scenarios.json
   def create
     @scenario = Scenario.new(scenario_params)
+    @scenario.project_id = current_project.id
 
     respond_to do |format|
       if @scenario.save
-        format.html { redirect_to @scenario, notice: 'Scenario was successfully created.' }
+        format.html { redirect_to scenarios_path, notice: "Cenário (#{@scenario.name}) cadastrado com sucesso!" }
         format.json { render :show, status: :created, location: @scenario }
       else
         format.html { render :new }
@@ -46,7 +48,7 @@ class ScenariosController < ProjectManagerController
   def update
     respond_to do |format|
       if @scenario.update(scenario_params)
-        format.html { redirect_to @scenario, notice: 'Scenario was successfully updated.' }
+        format.html { redirect_to scenarios_path, notice: "Cenário (#{@scenario.name}) atualizado com sucesso!" }
         format.json { render :show, status: :ok, location: @scenario }
       else
         format.html { render :edit }

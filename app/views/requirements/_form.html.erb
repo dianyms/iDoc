@@ -10,25 +10,29 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :name %>
-    <%= f.text_field :name %>
+  
+   <div class="form-group">
+      <label>Nome</label>
+      <%= f.text_field :name, class:"form-control" %> 
+  </div>
+  
+   <div class="form-group">
+      <label>Descrição</label>
+      <%= f.text_field :description, class:"form-control" %> 
   </div>
 
-  <div class="field">
-    <%= f.label :description %>
-    <%= f.text_area :description %>
-  </div>
 
-  <div class="field">
-    <%= f.label :requirement_type %>
-    <%= f.text_field :requirement_type %>
+  <div class="form-group">
+   <label>Tipo</label>
+    <select class="form-control">
+        <option>Funcional</option>
+        <option>Não Funcional</option>
+        <option>Suplementar</option>
+    </select>
   </div>
   
  
+  <button type="submit" class="btn btn-success">Salvar<i class="fa fa-check pull-left"></i>
+  </button>
 
-  <div class="actions">
-    <%= f.submit %>
-  </div>
 <% end %>

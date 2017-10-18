@@ -30,7 +30,7 @@ class CategoriesController < AdminController
 
     respond_to do |format|
       if @category.save
-        format.html { redirect_to @category, notice: 'Category was successfully created.' }
+        format.html { redirect_to categories_path, notice:  "Categoria (#{@category.name}) cadastrada com sucesso!" }
         format.json { render :show, status: :created, location: @category }
       else
         format.html { render :new }
@@ -44,7 +44,7 @@ class CategoriesController < AdminController
   def update
     respond_to do |format|
       if @category.update(category_params)
-        format.html { redirect_to @category, notice: 'Category was successfully updated.' }
+        format.html { redirect_to categories_path, notice:  "Categoria (#{@category.name}) atualizada com sucesso!" }
         format.json { render :show, status: :ok, location: @category }
       else
         format.html { render :edit }

@@ -2,38 +2,48 @@
 <div id="page-wrapper">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-lg-12">
-                <h1 class="page-header">Gerenciar</h1>
-                 <p>
-                    <strong>ID:</strong>
-                    <%= current_project.id %>
-                </p>
-                <p>
-                    <strong>Title:</strong>
-                    <%= current_project.title %>
-                </p>
-                <p>
-                    <strong>Text:</strong>
-                    <%= current_project.text %>
-                </p>
-                <p>
-                    <strong>Delivery date:</strong>
-                    <%= current_project.delivery_date %>
-                </p>
-                <p>
-                    <strong>Creation date:</strong>
-                    <%= current_project.creation_date %>
-                </p>
-                <p>
-                    <strong>Category:</strong>
-                    <%= current_project.category %>
-                </p>
+          <h2 class="page-header"> Gerenciar Projeto </h2>
+            <div class="panel panel-default">
+              <div class="panel-heading"> 
+                   <i class="fa fa-briefcase fa-fw"></i> 
+                   Projeto
+              </div>
+              <!-- /.panel-heading -->
+              <div class="panel-body">
+                <div class="table-responsive">
+                  <table class="table table-striped table-bordered table-hover">
+                       <thead>
+                        <tr>
+                          <th>Título</th>
+                          <th>Categoria</th>
+                          <th>Data Criação</th>
+                          <th>Data entrega</th>
+                          <th>Categoria</th>
+                        </tr>
+                      </thead>
                       
+                      <tbody>
+                          <tr>
+                            <td><%= current_project.title %></td>
+                            <td><%= current_project.text %></td>
+                            <td><%= current_project.delivery_date.strftime("%m/%d/%Y") %></td>
+                            <td><%= current_project.creation_date.strftime("%m/%d/%Y") %></td>
+                            <td><%= current_project.category.name %></td>
+                          </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <!-- /.table-responsive -->
+                </div>
+                <!-- /.panel-body -->
             </div>
-            <!-- /.col-lg-12 -->
-        </div>
-        <!-- /.row -->
+          <!-- /.col-lg-12 -->
+          <%= render 'report_all' %>
+      </div>
+      <!-- /.row -->
     </div>
     <!-- /.container-fluid -->
 </div>
 <!-- /#page-wrapper -->
+
+

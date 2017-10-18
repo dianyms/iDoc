@@ -29,7 +29,7 @@ class StepScenariosController < ProjectManagerController
 
     respond_to do |format|
       if @step_scenario.save
-        format.html { redirect_to @step_scenario, notice: 'Step scenario was successfully created.' }
+        format.html { redirect_to scenario_path(current_scenario), notice: "Passo do cenário cadastrado com sucesso!" }
         format.json { render :show, status: :created, location: @step_scenario }
       else
         format.html { render :new }
@@ -43,7 +43,7 @@ class StepScenariosController < ProjectManagerController
   def update
     respond_to do |format|
       if @step_scenario.update(step_scenario_params)
-        format.html { redirect_to @step_scenario, notice: 'Step scenario was successfully updated.' }
+        format.html { redirect_to scenario_path(current_scenario), notice: "Passo do cenário atualizado com sucesso!" }
         format.json { render :show, status: :ok, location: @step_scenario }
       else
         format.html { render :edit }

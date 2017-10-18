@@ -33,7 +33,7 @@ class ProjectsController < AdminController
       if @project.save
         @project_user = ProjectUser.create(user_id: current_user.id, project_id: @project.id)
          
-        format.html { redirect_to @project, notice: 'Project was successfully created.' }
+        format.html { redirect_to project_user_path(current_user.id), notice: "Projeto (#{@project.title}) cadastrado com sucesso!" }
         format.json { render :show, status: :created, location: @project }
       else
         format.html { render :new }
@@ -47,7 +47,7 @@ class ProjectsController < AdminController
   def update
     respond_to do |format|
       if @project.update(project_params)
-        format.html { redirect_to @project, notice: 'Project was successfully updated.' }
+        format.html { redirect_to  project_user_path(current_user.id), notice: "Projeto (#{@project.title}) atualizado com sucesso!" }
         format.json { render :show, status: :ok, location: @project }
       else
         format.html { render :edit }

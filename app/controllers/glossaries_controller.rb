@@ -29,7 +29,7 @@ class GlossariesController < ProjectManagerController
 
     respond_to do |format|
       if @glossary.save
-        format.html { redirect_to @glossary, notice: 'Glossary was successfully created.' }
+        format.html { redirect_to glossaries_path, notice: "Termo (#{@glossary.term}) cadastrado com sucesso!" }
         format.json { render :show, status: :created, location: @glossary }
       else
         format.html { render :new }
@@ -43,7 +43,7 @@ class GlossariesController < ProjectManagerController
   def update
     respond_to do |format|
       if @glossary.update(glossary_params)
-        format.html { redirect_to @glossary, notice: 'Glossary was successfully updated.' }
+        format.html { redirect_to glossaries_path, notice: "Termo (#{@glossary.term}) atualizado com sucesso!" }
         format.json { render :show, status: :ok, location: @glossary }
       else
         format.html { render :edit }

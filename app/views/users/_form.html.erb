@@ -1,42 +1,55 @@
-<body class="body_form">
-  <%= form_for(user) do |f| %>
-    <% if user.errors.any? %>
-      <div id="error_explanation">
-        <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
-
-        <ul>
-        <% user.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-        </ul>
+<div class="container">
+  <div class="row">
+    <div class="col-md-4 col-md-offset-4">
+      <div class="login-panel panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">Please Sign Up</h3>
+        </div>
+        <div class="panel-body">
+            <%= form_for(user) do |f| %>
+              <% if user.errors.any? %>
+                <div id="error_explanation">
+                  <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+                  <ul>
+                  <% user.errors.full_messages.each do |message| %>
+                    <li><%= message %></li>
+                  <% end %>
+                  </ul>
+                </div>
+              <% end %>
+              <fieldset>
+                
+                <div class="form-group">
+                   <%= f.text_field :name, autofocus: true, 
+                   class: "form-control", placeholder: "Name", type: "name" %>
+                </div>
+                
+                 <div class="form-group">
+                   <%= f.email_field :email, autofocus: true, 
+                   class: "form-control", placeholder: "E-mail", type: "email" %>
+                 </div>
+                 
+                 <div class="form-group">
+                   <%= f.password_field :password, autofocus: true, 
+                   class: "form-control", placeholder: "Senha", type: "password" %>
+                 </div>
+            
+                <div class="form-group">
+                   <%= f.password_field :password_confirmation, autofocus: true, 
+                   class: "form-control", placeholder: "Confirme sua senha", type: "password" %>
+                 </div>
+            
+                <div class="actions">
+                  <%= f.submit "Inscrever-se", :class => "btn btn-lg btn-success btn-block" %>
+                </div>
+            
+                <br> <br>
+                <p>Já tem uma conta? <%= link_to "Entrar", sign_in_path %></p>
+              </fieldset>
+            <% end %>
+        </div>
       </div>
-    <% end %>
-
-    <div class="field">
-      <%= f.label :name %>
-      <%= f.text_field :name, :class => "text_form" %>
     </div>
+  </div>
+</div>
 
-    <div class="field">
-      <%= f.label :email %>
-      <%= f.email_field :email, :class => "text_form" %>
-    </div>
-
-    <div class="field">
-      <%= f.label :password %>
-      <%= f.password_field :password, :class => "text_form" %>
-    </div>
-
-    <div class="field">
-      <%= f.label :password_confirmation %>
-      <%= f.password_field :password_confirmation, :class => "text_form" %>
-    </div>
-
-    <div class="actions">
-      <%= f.submit "Inscrever-se", :class => "button-form" %>
-    </div>
-
-    <br> <br>
-    <p>Já tem uma conta? <%= link_to "Entrar", sign_in_path %></p>
-  <% end %>
-<body>

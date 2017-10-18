@@ -30,7 +30,7 @@ class RequirementsController < ProjectManagerController
 
     respond_to do |format|
       if @requirement.save
-        format.html { redirect_to @requirement, notice: 'Requirement was successfully created.' }
+        format.html { redirect_to requirements_path, notice: "Requisito (#{@requirement.name}) criado com sucesso!" }
         format.json { render :show, status: :created, location: @requirement }
       else
         format.html { render :new }
@@ -44,7 +44,7 @@ class RequirementsController < ProjectManagerController
   def update
     respond_to do |format|
       if @requirement.update(requirement_params)
-        format.html { redirect_to @requirement, notice: 'Requirement was successfully updated.' }
+        format.html { redirect_to requirements_path, notice: "Requisito (#{@requirement.name}) atualizado com sucesso!" }
         format.json { render :show, status: :ok, location: @requirement }
       else
         format.html { render :edit }

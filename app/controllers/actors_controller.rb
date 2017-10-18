@@ -31,7 +31,7 @@ class ActorsController < ProjectManagerController
 
     respond_to do |format|
       if @actor.save
-        format.html { redirect_to @actor, notice: 'Actor was successfully created.' }
+        format.html { redirect_to actors_path, notice: "Ator (#{@actor.name}) cadastrado com sucesso!" }
         format.json { render :show, status: :created, location: @actor }
       else
         format.html { render :new }
@@ -45,7 +45,7 @@ class ActorsController < ProjectManagerController
   def update
     respond_to do |format|
       if @actor.update(actor_params)
-        format.html { redirect_to @actor, notice: 'Actor was successfully updated.' }
+        format.html { redirect_to actors_path, notice: "Ator (#{@actor.name}) atualizado com sucesso!" }
         format.json { render :show, status: :ok, location: @actor }
       else
         format.html { render :edit }

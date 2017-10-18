@@ -1,7 +1,8 @@
-class UsersController < ApplicationController
+class UsersController < AdminController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
   before_action :authorize, except: [:new, :create]
-
+  layout "session", only: [:new]
+   
   # GET /users
   # GET /users.json
   def index
