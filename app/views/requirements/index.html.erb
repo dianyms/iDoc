@@ -33,16 +33,17 @@
                         <td><%= requirement.name %></td>
                         <td><%= requirement.description %></td>
                         <td><%= requirement.requirement_type %></td>
-                        <td><%= link_to requirement, class: "btn default btn-xs red" do %>
-                          <i class="fa fa-edit fa-fw"></i>  
-                              Gerenciar
-                          <% end %> 
-                             
-                          <%= link_to edit_requirement_path(requirement), class: "btn default btn-xs purple" do %>
+                        <td><%= link_to edit_requirement_path(requirement), class: "btn default btn-xs purple" do %>
                              <i class="fa fa-edit fa-fw"></i>  
                                 Editar
                              <% end %> 
-                          <button type="submit" class="btn default btn-xs black"><i class="fa  fa-times fa-fw"></i> Excluir</button></td>
+                             
+                        <%= link_to requirement, method: :delete, data: { confirm: 'Are you sure?'},
+                                     class: "btn default btn-xs black" do %>
+                                    <i class="fa fa-times fa-fw"></i>  
+                                    Excluir
+                             <% end %> 
+                          </td>
                       </tr>
                     <% end %>
                   </tbody>

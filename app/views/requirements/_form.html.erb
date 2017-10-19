@@ -24,13 +24,8 @@
 
   <div class="form-group">
    <label>Tipo</label>
-    <select class="form-control">
-        <option>Funcional</option>
-        <option>Não Funcional</option>
-        <option>Suplementar</option>
-    </select>
+    <%= f.select :requirement_type, options_for_select([["Funcional"], ["Não funcional"], ["Suplementar"]], requirement.requirement_type), {}, {class: "form-control"} %>
   </div>
-  
  
   <button type="submit" class="btn btn-success">Salvar<i class="fa fa-check pull-left"></i>
   </button>

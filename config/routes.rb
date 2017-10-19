@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   get    'sign_in'   => 'sessions#new'
   post   'sign_in'   => 'sessions#create'
   delete 'sign_out'  => 'sessions#destroy'
+  get     'report_glossary'   => 'glossaries#report'
+  get     'report_requirement'   => 'requirements#report'
 
   resources :step_scenarios #cria 8 rotas de forma automatica
   resources :scenarios

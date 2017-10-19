@@ -61,6 +61,19 @@ class GlossariesController < ProjectManagerController
       format.json { head :no_content }
     end
   end
+  
+  def report
+    @glossaries = Glossary.where(project_id: current_project.id)
+    respond_to do |format|
+      format.html
+      format.pdf do
+        pdf = GlossaryPdf.new(@glossaries)
+        send_data pdf.render, filename: "glossario.pdf",
+                              type: "application/pdf",
+                              disposition: "inline"
+      end
+    end
+  end
 
   private
     # Use callbacks to share common setup or constraints between actions.

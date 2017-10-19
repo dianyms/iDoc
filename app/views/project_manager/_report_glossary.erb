@@ -1,0 +1,21 @@
+<div class="col-lg-3 col-md-6">
+    <div class="panel panel-green">
+        <div class="panel-heading">
+            <div class="row">
+                <div class="col-xs-3">
+                    <i class="fa fa-tasks fa-5x"></i>
+                </div>
+                <div class="col-xs-9 text-right">
+                    <div>Glossário</div>
+                </div>
+            </div>
+        </div>
+        <a href="#">
+            <div class="panel-footer">
+                  <%= link_to "Gerar Relatório", report_glossary_path(@glossaries, format: "pdf") %>
+                <span class="pull-left"></span>
+                <div class="clearfix"></div>
+            </div>
+        </a>
+    </div>
+</div>

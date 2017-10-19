@@ -18,6 +18,10 @@
                           <i class="fa fa-plus fa-fw"></i>  
                           Adicionar
                     <% end %> 
+                     <%= link_to report_glossary_path(@glossaries, format: "pdf"), class: "btn default btn-xs red pull-right" do %>
+                                    <i class="fa fa-edit fa-fw"></i>  
+                                    Relatório
+                             <% end %> 
               </div>
               <!-- /.panel-heading -->
               <div class="panel-body">
@@ -28,6 +32,7 @@
                           <th>Termo</th>
                           <th>Descrição</th>
                           <th>Sinônimo</th>
+                          <th></th>
                           <th></th>
                         </tr>
                       </thead>
@@ -41,9 +46,13 @@
                             <td><%= link_to edit_glossary_path(glossary), class: "btn default btn-xs purple" do %>
                                     <i class="fa fa-edit fa-fw"></i>  
                                     Editar
-                             <% end %> 
+                             <% end %>  
                              
-                             <button type="submit" class="btn default btn-xs black"><i class="fa  fa-times fa-fw"></i> Excluir</button></td>
+                             <td><%= link_to glossary, method: :delete, data: { confirm: 'Are you sure?'},
+                                     class: "btn default btn-xs black" do %>
+                                    <i class="fa fa-times fa-fw"></i>  
+                                    Excluir
+                             <% end %>  
                           </tr>
                         <% end %>
                       </tbody>
