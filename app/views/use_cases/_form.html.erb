@@ -26,6 +26,18 @@
      <label>Requisito</label>
      <%= collection_select(:use_case, :requirement_id, @requirement_options_select, :id, :name, {}, {class: "form-control"}) %>
   </div>
+  
+  <div class="row">
+    <div class="col-xs-6">
+      <div class="form-group">
+        <label>Imagem</label> <br>
+        <% if @use_case.picture.present? %>
+          <%= image_tag @use_case.picture, class: "img-thumbnail" %>
+        <% end %>
+        <%= f.file_field :picture, class: "btn" %>
+      </div>
+    </div>
+  </div>
 
   <button type="submit" class="btn btn-success">Salvar<i class="fa fa-check pull-left"></i>
   </button>

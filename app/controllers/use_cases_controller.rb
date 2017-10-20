@@ -34,8 +34,7 @@ class UseCasesController < ProjectManagerController
         format.html { redirect_to use_cases_path, notice: "Caso de Uso (#{@use_case.name}) cadastrado com sucesso!" }
         format.json { render :show, status: :created, location: @use_case }
       else
-        format.html { render :new }
-        format.json { render json: @use_case.errors, status: :unprocessable_entity }
+        render :new 
       end
     end
   end
@@ -85,6 +84,6 @@ class UseCasesController < ProjectManagerController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def use_case_params
-      params.require(:use_case).permit(:name, :description, :requirement_id)
+      params.require(:use_case).permit(:name, :description, :requirement_id, :picture)
     end
 end
