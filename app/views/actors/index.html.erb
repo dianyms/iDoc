@@ -42,7 +42,11 @@
                                     Editar
                              <% end %> 
                              
-                             <button type="submit" class="btn default btn-xs black"><i class="fa  fa-times fa-fw"></i> Excluir</button></td>
+                             <%= link_to actor, method: :delete, data: { confirm: 'Are you sure?'},
+                                     class: "btn default btn-xs black" do %>
+                                    <i class="fa fa-times fa-fw"></i>  
+                                    Excluir
+                             <% end %>  
                           </tr>
                         <% end %>
                       </tbody>

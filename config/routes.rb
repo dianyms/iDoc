@@ -9,6 +9,9 @@ Rails.application.routes.draw do
   delete 'sign_out'  => 'sessions#destroy'
   get     'report_glossary'   => 'glossaries#report'
   get     'report_requirement'   => 'requirements#report'
+  get     'report_scenario'   => 'scenarios#report'
+  get     'report_main'   => 'project_manager#report'
+  get     'report_use_case'   => 'use_cases#report'
 
   resources :step_scenarios #cria 8 rotas de forma automatica
   resources :scenarios

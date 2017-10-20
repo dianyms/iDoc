@@ -23,7 +23,7 @@
 
   <div class="form-group">
    <label>Tipo</label>
-    <%= f.select :use_case, options_for_select([["Principal"], ["Alternativo"]], scenario.use_case), {}, {class: "form-control"} %>
+    <%= f.select :scenario_type, options_for_select([["Principal"], ["Alternativo"]], scenario.scenario_type), {}, {class: "form-control"} %>
   </div>
   
    <div class="form-group">

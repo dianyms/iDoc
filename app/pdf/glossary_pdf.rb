@@ -3,15 +3,15 @@ class GlossaryPdf < Prawn::Document
     def initialize(glossaries)
         super(top_margin: 70)
         @glossary = glossaries
-        title
-        line_items
+        title_glossary
+        line_items_glossary
     end
     
-    def title
+    def title_glossary
         text "Glossário", size: 20, style: :bold
     end
     
-    def line_items
+    def line_items_glossary
         move_down 20
         
         data = [["Termo", "Descrição", "Sinônimo"]]

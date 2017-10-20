@@ -2,7 +2,7 @@
 <div id="page-wrapper">
     <div class="container-fluid">
         <div class="row">
-           <h2 class="page-header"> Requisitos </h2>
+           <h2 class="page-header">  Requisitos </h2>
               <!-- NOTIFICACAO -->
               <% if notice %>
                  <div class="alert alert-success alert-dismissable">
@@ -11,50 +11,11 @@
                  </div>
               <% end %>
               
-            <div class="panel panel-default">
-              <div class="panel-heading"> 
-                   <i class="fa fa-briefcase fa-fw"></i> Requisitos
-              </div>
-              <!-- /.panel-heading -->
-              <div class="panel-body">
-                <div class="table-responsive">
-                  <table class="table table-striped table-bordered table-hover">
-                       <thead>
-                    <tr>
-                      <th>Nome</th>
-                      <th>Descrição</th>
-                      <th>Tipo</th>
-                      <th></th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <% @requirements.each do |requirement| %>
-                      <tr>
-                        <td><%= requirement.name %></td>
-                        <td><%= requirement.description %></td>
-                        <td><%= requirement.requirement_type %></td>
-                        <td><%= link_to edit_requirement_path(requirement), class: "btn default btn-xs purple" do %>
-                             <i class="fa fa-edit fa-fw"></i>  
-                                Editar
-                             <% end %> 
-                             
-                        <%= link_to requirement, method: :delete, data: { confirm: 'Are you sure?'},
-                                     class: "btn default btn-xs black" do %>
-                                    <i class="fa fa-times fa-fw"></i>  
-                                    Excluir
-                             <% end %> 
-                          </td>
-                      </tr>
-                    <% end %>
-                  </tbody>
-                  
-                    </table>
-                  </div>
-                  <!-- /.table-responsive -->
-                </div>
-                <!-- /.panel-body -->
-            </div>
-          <!-- /.col-lg-12 -->
+              <%= render 'functional', requirement: @requirement %>
+              <br>
+              <%= render 'nofunctional', requirement: @requirement %>
+              <br>
+              <%= render 'additional', requirement: @requirement %>
       </div>
       <!-- /.row -->
     </div>

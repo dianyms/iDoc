@@ -66,6 +66,19 @@ class ScenariosController < ProjectManagerController
       format.json { head :no_content }
     end
   end
+  
+  def report
+    @scenarios = Scenario.where(project_id: current_project.id)
+    respond_to do |format|
+      format.html
+      format.pdf do
+        pdf = ScenarioPdf.new(@scenarios)
+        send_data pdf.render, filename: "cenario.pdf",
+                              type: "application/pdf",
+                              disposition: "inline"
+      end
+    end
+  end
 
   private
     #Options UseCase for selection

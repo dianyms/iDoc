@@ -63,6 +63,19 @@ class UseCasesController < ProjectManagerController
       format.json { head :no_content }
     end
   end
+  
+  def report
+    @use_cases = UseCase.where(project_id: current_project.id)
+    respond_to do |format|
+      format.html
+      format.pdf do
+        pdf = UseCasePdf.new(@use_cases)
+        send_data pdf.render, filename: "usecase.pdf",
+                              type: "application/pdf",
+                              disposition: "inline"
+      end
+    end
+  end
 
   private
     # Use callbacks to share common setup or constraints between actions.
