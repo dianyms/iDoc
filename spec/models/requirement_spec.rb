@@ -16,13 +16,21 @@ RSpec.describe Requirement, type: :model do
   end
 
   it 'should be not created without type' do
-    @requirement.type = nil
+    @requirement.requirement_type = nil
     expect(@requirement).to_not be_valid
   end
 
   it 'should be not created without project' do
     @requirement.project = nil
     expect(@requirement).to_not be_valid
+  end
+  
+  it 'invalid if exists title equal' do
+    requirement = Requirement.create(name: 'Test', description: 'text example', requirement_type: 'Funcional',
+     project: @project)
+    requirement = Requirement.new(name: 'Test', description: 'text example2', requirement_type: 'Não Funcional',
+     project: @project)
+    expect(requirement).to_not be_valid
   end
 
 end

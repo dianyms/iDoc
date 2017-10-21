@@ -36,8 +36,7 @@ class UseCasePdf < Prawn::Document
             if item.scenario_type == tipo
                 move_down 20
                 text "3. Cenário " + tipo, size: 15, style: :bold
-                text "Nome: " + item.name, size: 13, style: :bold
-                text "Descrição: " + item.description, size: 13, style: :bold
+                text  item.description, size: 12, style: :bold
                line_items_step_scenario(item.id)
              end
         end

@@ -14,8 +14,9 @@ class UseCasesController < ProjectManagerController
 
   # GET /use_cases/new
   def new
-    @use_case = UseCase.new
     @requirement_options_select = Requirement.where(project_id: current_project.id)
+    @use_case = UseCase.new
+    
   end
 
   # GET /use_cases/1/edit
@@ -34,7 +35,8 @@ class UseCasesController < ProjectManagerController
         format.html { redirect_to use_cases_path, notice: "Caso de Uso (#{@use_case.name}) cadastrado com sucesso!" }
         format.json { render :show, status: :created, location: @use_case }
       else
-        render :new 
+        format.html { render :new }
+        format.json { render json: @use_case.errors, status: :unprocessable_entity }
       end
     end
   end

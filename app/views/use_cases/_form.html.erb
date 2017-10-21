@@ -1,14 +1,15 @@
 <%= form_for(use_case) do |f| %>
-  <% if use_case.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(use_case.errors.count, "error") %> prohibited this use_case from being saved:</h2>
+   <% if use_case.errors.any? %>
+    <div class="alert alert-danger alert-dismissable">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+      <h2><%= pluralize(use_case.errors.count, "error") %> prohibited this project_user from being saved:</h2>
 
       <ul>
       <% use_case.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>
-    </div>
+  </div>
   <% end %>
   
    <div class="form-group">
@@ -18,13 +19,13 @@
 
    <div class="form-group">
       <label>Descrição</label>
-      <%= f.text_field :description, class:"form-control" %> 
+      <%= f.text_area :description, class:"form-control" %> 
   </div>
   
   
   <div class="form-group">
      <label>Requisito</label>
-     <%= collection_select(:use_case, :requirement_id, @requirement_options_select, :id, :name, {}, {class: "form-control"}) %>
+     <%= collection_select(:use_case, :requirement_id, Requirement.where(project_id: current_project.id, requirement_type: "Funcional"), :id, :name, {}, {class: "form-control"}) %>
   </div>
   
   <div class="row">

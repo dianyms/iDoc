@@ -59,7 +59,7 @@ class RequirementPdf < Prawn::Document
     def line_items_additional
         move_down 20
         text "Requisitos Suplementares", size: 15, style: :bold
-        text "Abrange todo o sistema.", size: 12
+        text "Abrangem todo o sistema.", size: 12
         move_down 6
         
         data = [["Nome", "Descrição"]]

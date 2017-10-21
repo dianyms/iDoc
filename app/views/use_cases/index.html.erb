@@ -24,6 +24,8 @@
                       <th>Descrição</th>
                       <th>Requisito</th>
                       <th></th>
+                      <th></th>
+                      <th></th>
                     </tr>
                   </thead>
                   
@@ -37,19 +39,19 @@
                         <td><%= link_to use_case, class: "btn default btn-xs red" do %>
                            <i class="fa fa-edit fa-fw"></i>  
                            Gerenciar
-                           <% end %> 
+                           <% end %> </td>
                            
-                           <%= link_to edit_use_case_path(use_case), class: "btn default btn-xs purple" do %>
+                         <td>  <%= link_to edit_use_case_path(use_case), class: "btn default btn-xs purple" do %>
                               <i class="fa fa-edit fa-fw"></i>  
                               Editar
-                              <% end %> 
+                              <% end %> </td>
                            
                            
-                              <%= link_to use_case, method: :delete, data: { confirm: 'Are you sure?'},
+                        <td> <%= link_to use_case, method: :delete, data: { confirm: 'Are you sure?'},
                                      class: "btn default btn-xs black" do %>
                                     <i class="fa fa-times fa-fw"></i>  
                                     Excluir
-                             <% end %>
+                             <% end %> </td>
                       </tr>
                     <% end %>
                   </tbody>

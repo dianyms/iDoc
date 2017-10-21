@@ -718,7 +718,7 @@ label {
 .form-control[readonly],
 fieldset[disabled] .form-control {
   cursor: not-allowed;
-  background-color: #eeeeee;
+  background-color: #068a7b;
 }
 
 .uneditable-input {

@@ -2,8 +2,8 @@ require 'rails_helper'
 
 RSpec.describe Project, type: :model do
   before(:each) do
-    @project = Project.new(:title => 'Title', :text => 'Example text', :delivery_date => '25/05/2017',
-      :creation_date => Date.current, :category => 'comercial')
+    @project = Project.new(:title => 'Title', :text => 'Example text', :delivery_date => Date.current,
+      :creation_date => Date.current, :category => @category)
   end
 
   it 'should be not created without title' do
@@ -30,12 +30,12 @@ RSpec.describe Project, type: :model do
     @project.category = nil
     expect(@project).to_not be_valid
   end
-
+  
   it 'invalid if exists title equal' do
     project = Project.create( title: 'Test', text: 'text example', delivery_date: '',
-     creation_date: Date.current, category: 'comercial')
+     creation_date: Date.current, category: @category)
     project = Project.new( title: 'Test', text: 'text example2', delivery_date: '',
-     creation_date: Date.current, category: 'comercial')
+     creation_date: Date.current, category: @category)
     expect(project).to_not be_valid
   end
 
@@ -54,6 +54,4 @@ RSpec.describe Project, type: :model do
   it 'have one glossary' do
     is_expected.to have_one(:glossary)
   end
-
-
 end
