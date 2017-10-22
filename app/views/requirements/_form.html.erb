@@ -27,7 +27,11 @@
     <%= f.select :requirement_type, options_for_select([["Funcional"], ["Não Funcional"], ["Suplementar"]], requirement.requirement_type), {}, {class: "form-control"} %>
   </div>
  
-  <button type="submit" class="btn btn-success">Salvar<i class="fa fa-check pull-left"></i>
+   <button type="submit" class="btn btn-primary">Salvar<i class="fa fa-check pull-left"></i>
   </button>
-
+  
+  <button class="btn btn-default" data-disable-with="Cancel" formnovalidate="" name="_continue" type="submit">
+    <i class="fa fa-times"></i>
+    Cancel
+  </button>
 <% end %>

@@ -33,14 +33,20 @@
       <div class="form-group">
         <label>Imagem</label> <br>
         <% if @use_case.picture.present? %>
-          <%= image_tag @use_case.picture, class: "img-thumbnail" %>
+          <%= image_tag @use_case.picture, class: "btn btn-info create" %>
         <% end %>
-        <%= f.file_field :picture, class: "btn" %>
+        <%= f.file_field :picture, class: "" %>
+        <i class="icon-plus icon-white"></i>
       </div>
     </div>
   </div>
 
-  <button type="submit" class="btn btn-success">Salvar<i class="fa fa-check pull-left"></i>
+  <button type="submit" class="btn btn-primary">Salvar<i class="fa fa-check pull-left"></i>
+  </button>
+  
+  <button class="btn btn-default" data-disable-with="Cancel" formnovalidate="" name="_continue" type="submit">
+    <i class="fa fa-times"></i>
+    Cancel
   </button>
   
 <% end %>

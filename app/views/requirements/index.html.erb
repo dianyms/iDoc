@@ -1,8 +1,12 @@
 <!-- Page Content -->
 <div id="page-wrapper">
-    <div class="container-fluid">
-        <div class="row">
-           <h2 class="page-header">  Requisitos </h2>
+    <div class="content" data-pjax-container=""><script>
+          $('.nav.nav-pills li.active').removeClass('active');
+          $('.nav.nav-pills li[data-model="project"]').addClass('active');
+        </script>
+            <div class="page-header">
+                <h1 class="">Requisitos</h1>
+            </div>
               <!-- NOTIFICACAO -->
               <% if notice %>
                  <div class="alert alert-success alert-dismissable">
@@ -11,16 +15,31 @@
                  </div>
               <% end %>
               
-              <%= render 'functional', requirement: @requirement %>
-              <br>
-              <%= render 'nofunctional', requirement: @requirement %>
-              <br>
-              <%= render 'additional', requirement: @requirement %>
-      </div>
-      <!-- /.row -->
-    </div>
-    <!-- /.container-fluid -->
-</div>
-<!-- /#page-wrapper -->
+            <div class="row">
+                <div class="col-lg-12">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <i class="fa fa-plus-circle fa-fw"></i> 
+                                Novo Requisito
+                            </div>
+                            <div class="panel-body">
+                            
+                                 <%= render 'functional', requirement: @requirement %>
+                                  <br>
+                                  <%= render 'nofunctional', requirement: @requirement %>
+                                  <br>
+                                  <%= render 'additional', requirement: @requirement %>
+                                   
+                            </div>
+                            <!-- /.panel-body -->
+                        </div>
+                        <!-- /.panel -->
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+        </div>
+    <!-- /#page-wrapper -->
+
 
 

@@ -65,7 +65,7 @@ class RequirementPdf < Prawn::Document
         data = [["Nome", "Descrição"]]
         
         @requirement.each do |item| 
-            if item.requirement_type == "Funcional" 
+            if item.requirement_type == "Suplementar" 
                 data += [[item.name, item.description]]
             end
         end

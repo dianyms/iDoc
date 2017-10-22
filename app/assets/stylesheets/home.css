@@ -1,11 +1,11 @@
  /*
- *= require bootstrap
- *= require fonts
- *= require base
- *= require main
- *= require vendor
- *= require ionicons/css/ionicons.css
- *= require ionicons/css/ionicons.min.css
- *= require micons/micons.css
+ *= require home/bootstrap
+ *= require home/fonts
+ *= require home/base
+ *= require home/main
+ *= require home/vendor
+ *= require home/ionicons/css/ionicons.css
+ *= require home/ionicons/css/ionicons.min.css
+ *= require home/micons/micons.css
  *= require_self
  */
