@@ -1018,7 +1018,51 @@
         1,
         null
       ],
-      "/home/ubuntu/workspace/app/jobs/application_job.rb": [
+      "/home/ubuntu/workspace/app/pdf/main_pdf.rb": [
+        0,
+        0,
+        0,
+        null,
+        0,
+        null,
+        0,
+        0
+      ],
+      "/home/ubuntu/workspace/app/pdf/scenario_pdf.rb": [
+        0,
+        null,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        null,
+        0,
+        0,
+        0,
+        null,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        null,
+        0,
+        0,
+        null,
+        0,
+        null,
+        0,
+        0,
+        0,
         0,
         0
       ],
@@ -1056,44 +1100,6 @@
         null,
         0,
         null,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        null,
-        0,
-        0,
-        null,
-        0,
-        null,
-        0,
-        0,
-        0,
-        0,
-        0
-      ],
-      "/home/ubuntu/workspace/app/pdf/scenario_pdf.rb": [
-        0,
-        null,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        null,
-        0,
-        0,
-        0,
-        null,
-        0,
         0,
         0,
         0,
@@ -1197,16 +1203,6 @@
         0,
         0
       ],
-      "/home/ubuntu/workspace/app/pdf/main_pdf.rb": [
-        0,
-        0,
-        0,
-        null,
-        0,
-        null,
-        0,
-        0
-      ],
       "/home/ubuntu/workspace/app/pdf/glossary_pdf.rb": [
         0,
         null,
@@ -1235,76 +1231,6 @@
         0,
         0,
         0,
-        0,
-        0
-      ],
-      "/home/ubuntu/workspace/app/channels/application_cable/channel.rb": [
-        0,
-        0,
-        0,
-        0
-      ],
-      "/home/ubuntu/workspace/app/channels/application_cable/connection.rb": [
-        0,
-        0,
-        0,
-        0
-      ],
-      "/home/ubuntu/workspace/app/helpers/categories_helper.rb": [
-        0,
-        0
-      ],
-      "/home/ubuntu/workspace/app/helpers/actors_helper.rb": [
-        0,
-        0
-      ],
-      "/home/ubuntu/workspace/app/helpers/categoria_helper.rb": [
-        0,
-        0
-      ],
-      "/home/ubuntu/workspace/app/helpers/actor_use_cases_helper.rb": [
-        0,
-        0
-      ],
-      "/home/ubuntu/workspace/app/helpers/step_scenarios_helper.rb": [
-        0,
-        0
-      ],
-      "/home/ubuntu/workspace/app/helpers/projects_helper.rb": [
-        0,
-        0
-      ],
-      "/home/ubuntu/workspace/app/helpers/project_users_helper.rb": [
-        0,
-        0
-      ],
-      "/home/ubuntu/workspace/app/helpers/use_cases_helper.rb": [
-        0,
-        0
-      ],
-      "/home/ubuntu/workspace/app/helpers/application_helper.rb": [
-        0,
-        0
-      ],
-      "/home/ubuntu/workspace/app/helpers/admin_helper.rb": [
-        0,
-        0
-      ],
-      "/home/ubuntu/workspace/app/helpers/scenarios_helper.rb": [
-        0,
-        null,
-        0,
-        0,
-        0,
-        null,
-        0,
-        null,
-        0,
-        0,
-        0,
-        0
-      ],
-      "/home/ubuntu/workspace/app/helpers/use_case_requirements_helper.rb": [
         0,
         0
       ],
@@ -1348,19 +1274,17 @@
         0,
         0
       ],
-      "/home/ubuntu/workspace/app/helpers/requirements_helper.rb": [
+      "/home/ubuntu/workspace/app/helpers/scenarios_helper.rb": [
         0,
-        0
-      ],
-      "/home/ubuntu/workspace/app/helpers/users_helper.rb": [
+        null,
         0,
-        0
-      ],
-      "/home/ubuntu/workspace/app/helpers/home_helper.rb": [
         0,
-        0
-      ],
-      "/home/ubuntu/workspace/app/helpers/glossaries_helper.rb": [
+        0,
+        null,
+        0,
+        null,
+        0,
+        0,
         0,
         0
       ],
@@ -1371,6 +1295,6 @@
         0
       ]
     },
-    "timestamp": 1508605816
+    "timestamp": 1508965984
   }
 }

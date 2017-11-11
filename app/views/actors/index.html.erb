@@ -37,21 +37,20 @@
                               <tr>
                                 <td><%= actor.name %></td>
                                 <td><%= actor.use_case.name %></td>
-                                <td><%= link_to actor, class: "btn default btn-xs red" do %>
-                                        <i class="fa fa-edit fa-fw"></i>  
-                                        Gerenciar
-                                     <% end %> 
-                                 
-                                 <%= link_to edit_actor_path(actor), class: "btn default btn-xs purple" do %>
-                                        <i class="fa fa-edit fa-fw"></i>  
-                                        Editar
-                                 <% end %> 
-                                 
-                                 <%= link_to actor, method: :delete, data: { confirm: 'Are you sure?'},
-                                         class: "btn default btn-xs black" do %>
-                                        <i class="fa fa-times fa-fw"></i>  
-                                        Excluir
-                                 <% end %>  
+                                
+                                 <td class="last links">
+                                    <ul class="inline list-inline">
+                                     
+                                         <%= link_to edit_actor_path(actor), class: "btn default btn-xs purple" do %>
+                                                <i class="fa fa-edit fa-fw"></i>  
+                                                
+                                         <% end %> 
+                                         
+                                         <%= link_to actor, method: :delete, data: { confirm: 'Are you sure?'}, class: "btn default btn-xs red" do %>
+                                                <i class="fa fa-times fa-fw"></i>  
+                                         <% end %> 
+                                    </ul>
+                                </td>
                               </tr>
                             <% end %>
                           </tbody>

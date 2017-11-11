@@ -1,7 +1,7 @@
 class UseCase < ApplicationRecord
-  validates :name, :description, :requirement, presence: true
+  validates :name, :description, presence: true
+  belongs_to :project, :class_name => "Project", :foreign_key => "project_id"
   belongs_to :requirement, :class_name => "Requirement", :foreign_key => "requirement_id" 
-  belongs_to :project, :class_name => "Requirement", :foreign_key => "requirement_id" 
   has_many :scenarios
   has_many :actors
   

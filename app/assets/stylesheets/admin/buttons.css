@@ -142,13 +142,13 @@
 .btn.blue.active,
 .btn.blue[disabled],
 .btn.blue.disabled {  
-  background-color: #0362fd !important;
+  background-color: #54c3f7 !important;
   color: #fff !important;
   outline: none !important;
 }
 
 .btn-group .btn.blue.dropdown-toggle {
-  background-color: #4d90fe !important;
+  background-color: #54c3f7 !important;
 }
 .btn-group .btn.blue:hover, 
 .btn-group .btn.blue:focus, 
@@ -156,7 +156,7 @@
 .btn-group .btn.blue.active, 
 .btn-group .btn.blue.disabled,
 .btn-group .btn.blue[disabled] { 
-  background-color: #0362fd !important;
+  background-color: #54c3f7 !important;
   color: #fff !important;
   outline: none !important;
 }

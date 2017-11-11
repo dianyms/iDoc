@@ -1,0 +1,79 @@
+<!-- Page Content -->
+<div id="page-wrapper">
+   <div class="content" data-pjax-container=""><script>
+          $('.nav.nav-pills li.active').removeClass('active');
+          $('.nav.nav-pills li[data-model="project"]').addClass('active');
+        </script>
+            <div class="page-header">
+                <h1 class="">Revisão</h1>
+            </div>
+              <!-- NOTIFICACAO -->
+              <% if notice %>
+                 <div class="alert alert-success alert-dismissable">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                    <%= notice %>
+                 </div>
+              <% end %>
+            <div class="row">
+              <div class="col-lg-12">   
+                <div class="panel panel-default">
+                  <div class="panel-heading"> 
+                       <i class="fa fa-briefcase fa-fw"></i> 
+                       Histórico de Revisões
+                        <%= link_to new_review_path, class: "btn default btn-xs green pull-right" do %>
+                              <i class="fa fa-plus fa-fw"></i>  
+                              Adicionar
+                        <% end %> 
+                  </div>
+                  <!-- /.panel-heading -->
+                  <div class="panel-body">
+                    <div class="table-responsive">
+                      <table class="table table-striped table-bordered table-hover">
+                         <thead>
+                            <tr>
+                              <th>Data</th>
+                              <th>Versão</th>
+                              <th>Descrição</th>
+                              <th>Autor</th>
+                              <th></th>
+                            </tr>
+                          </thead>
+                          
+                          <tbody>
+                            <% @reviews.each do |review| %>
+                              <tr>
+                                <td><%= review.data_review.strftime("%m/%d/%Y") %></td>
+                                <td><%= review.version %></td>
+                                <td><%= review.description %></td>
+                                <td><%= current_user.name %></td>
+                                <td class="last links">
+                                  <ul class="inline list-inline">
+                                   
+                                       <%= link_to edit_review_path(review), class: "btn default btn-xs purple" do %>
+                                              <i class="fa fa-edit fa-fw"></i>  
+                                              
+                                       <% end %> 
+                                       
+                                       <%= link_to review, method: :delete, data: { confirm: 'Are you sure?'}, class: "btn default btn-xs red" do %>
+                                              <i class="fa fa-times fa-fw"></i>  
+                                       <% end %> 
+                                  </ul>
+                                </td>
+                              </tr>
+                            <% end %>
+                          </tbody>
+                        </table>
+                      </div>
+                      <!-- /.table-responsive -->
+                    </div>
+                    <!-- /.panel-body -->
+                </div>
+              <!-- /.col-lg-12 -->
+          </div>
+          <!-- /.row -->
+      </div>
+      <!-- /.container-fluid -->
+</div>
+<!-- /#page-wrapper -->
+
+

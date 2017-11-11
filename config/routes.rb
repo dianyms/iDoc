@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :reviews
   resources :categories
   get 'home/index'
   root 'home#index'
@@ -12,6 +13,7 @@ Rails.application.routes.draw do
   get     'report_scenario'   => 'scenarios#report'
   get     'report_main'   => 'project_manager#report'
   get     'report_use_case'   => 'use_cases#report'
+  get     'report_traceability_matrix' => 'use_cases#report_traceability_matrix'
 
   resources :step_scenarios #cria 8 rotas de forma automatica
   resources :scenarios

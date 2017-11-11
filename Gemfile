@@ -56,6 +56,9 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'rails-controller-testing'
   gem 'factory_girl'
+  gem "pdf-inspector", "~> 1.0.0",
+    :require => "pdf/inspector",
+    :git => "https://github.com/sandal/pdf-inspector.git"
 end
 
 group :development do

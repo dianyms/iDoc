@@ -14,14 +14,14 @@ class UseCasesController < ProjectManagerController
 
   # GET /use_cases/new
   def new
-    @requirement_options_select = Requirement.where(project_id: current_project.id)
+    @requirement = Requirement.where(project_id: current_project.id, requirement_type: "Funcional")
     @use_case = UseCase.new
     
   end
 
   # GET /use_cases/1/edit
   def edit
-    @requirement_options_select = Requirement.where(project_id: current_project.id)
+    @requirement = Requirement.where(project_id: current_project.id, requirement_type: "Funcional")
   end
 
   # POST /use_cases
@@ -32,6 +32,7 @@ class UseCasesController < ProjectManagerController
 
     respond_to do |format|
       if @use_case.save
+        
         format.html { redirect_to use_cases_path, notice: "Caso de Uso (#{@use_case.name}) cadastrado com sucesso!" }
         format.json { render :show, status: :created, location: @use_case }
       else
@@ -77,7 +78,22 @@ class UseCasesController < ProjectManagerController
       end
     end
   end
-
+  
+  def report_traceability_matrix
+    @use_cases = UseCase.where(project_id: current_project.id)
+    @requirement= Requirement.where(project_id: current_project.id, requirement_type: "Funcional")
+    
+    respond_to do |format|
+      format.html
+      format.pdf do
+        pdf = TraceabilityMatrixPdf.new(@use_cases, @requirement)
+        send_data pdf.render, filename: "traceability_matrix.pdf",
+                              type: "application/pdf",
+                              disposition: "inline"
+      end
+    end
+  end
+  
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_use_case

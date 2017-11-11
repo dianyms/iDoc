@@ -4,7 +4,7 @@
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
  */
 body {
-  background-color: #f8f8f8;
+  background-color: #343a40;
 }
 #wrapper {
   width: 100%;
@@ -19,7 +19,7 @@ body {
     position: inherit;
     margin: 0 0 0 250px;
     padding: 0 30px;
-    border-left: 1px solid #e7e7e7;
+    border-left: 1px solid #343a40;
   }
 }
 .navbar-top-links {
@@ -75,10 +75,10 @@ body {
   padding: 15px;
 }
 .sidebar ul li {
-  border-bottom: 1px solid #e7e7e7;
+  border-bottom: 1px solid #343a40;
 }
 .sidebar ul li a.active {
-  background-color: #eeeeee;
+  background-color: #05bca9;
 }
 .sidebar .arrow {
   float: right;
@@ -238,12 +238,12 @@ table.dataTable thead .sorting:after {
   font-size: 40px;
 }
 .panel-green {
-  border-color: #5cb85c;
+  border-color: #37bc9b;
 }
 .panel-green > .panel-heading {
-  border-color: #5cb85c;
+  border-color: #37bc9b;
   color: white;
-  background-color: #5cb85c;
+  background-color: #37bc9b;
 }
 .panel-green > a {
   color: #5cb85c;
@@ -292,7 +292,7 @@ table.dataTable thead .sorting:after {
   left: 50%;
   width: 3px;
   margin-left: -1.5px;
-  background-color: #eeeeee;
+  background-color: #05bca9;
 }
 .timeline > li {
   position: relative;

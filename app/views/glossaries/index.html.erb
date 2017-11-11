@@ -39,7 +39,6 @@
                               <th>Descrição</th>
                               <th>Sinônimo</th>
                               <th></th>
-                              <th></th>
                             </tr>
                           </thead>
                           
@@ -49,16 +48,19 @@
                                 <td><%= glossary.term %></td>
                                 <td><%= glossary.description %></td>
                                 <td><%= glossary.synonymous %></td>
-                                <td><%= link_to edit_glossary_path(glossary), class: "btn default btn-xs purple" do %>
-                                        <i class="fa fa-edit fa-fw"></i>  
-                                        Editar
-                                 <% end %>  
-                                 
-                                 <td><%= link_to glossary, method: :delete, data: { confirm: 'Are you sure?'},
-                                         class: "btn default btn-xs black" do %>
-                                        <i class="fa fa-times fa-fw"></i>  
-                                        Excluir
-                                 <% end %>  
+                                <td class="last links">
+                                  <ul class="inline list-inline">
+                                   
+                                       <%= link_to edit_glossary_path(glossary), class: "btn default btn-xs purple" do %>
+                                              <i class="fa fa-edit fa-fw"></i>  
+                                              
+                                       <% end %> 
+                                       
+                                       <%= link_to glossary, method: :delete, data: { confirm: 'Are you sure?'}, class: "btn default btn-xs red" do %>
+                                              <i class="fa fa-times fa-fw"></i>  
+                                       <% end %> 
+                                  </ul>
+                                </td>
                               </tr>
                             <% end %>
                           </tbody>

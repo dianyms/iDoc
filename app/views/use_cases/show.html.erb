@@ -1,38 +1,49 @@
 <!-- Page Content -->
 <div id="page-wrapper">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-lg-12">
-                <h1 class="page-header">Use Case</h1>
-                <p>
-                  <strong>Name:</strong>
-                  <%= @use_case.name %>
-                </p>
-                
-                <p>
-                  <strong>Description:</strong>
-                  <%= @use_case.description %>
-                </p>
-                
-                <p>
-                  <strong>Project:</strong>
-                  <%= @use_case.project %>
-                </p>
-                
-                <p>
-                  <strong>Requisito:</strong>
-                  <%= @use_case.requirement %>
-                </p>
-                
-                <%= image_tag @use_case.picture.url %>
-                
-                <%= link_to 'Edit', edit_use_case_path(@use_case) %> |
-                <%= link_to 'Back', use_cases_path %>
+  <div class="content" data-pjax-container=""><script>
+          $('.nav.nav-pills li.active').removeClass('active');
+          $('.nav.nav-pills li[data-model="project"]').addClass('active');
+            </script>
+            <div class="page-header">
+              <h1 class="">Caso de Uso</h1>
             </div>
-            <!-- /.col-lg-12 -->
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <p>
+                          <strong>Nome:</strong>
+                          <%= @use_case.name %>
+                        </p>
+                        
+                        <p>
+                          <strong>Descrição:</strong>
+                          <%= @use_case.description %>
+                        </p>
+                        
+                        <p>
+                          <strong>Projeto:</strong>
+                          <%= current_project.title %>
+                        </p>
+                        
+                        <p>
+                          <strong>Requisito:</strong>
+                          <%= @use_case.requirement.name %>
+                        </p>
+                        
+                        <%= image_tag @use_case.picture.url %>
+                        
+                        <br><br>
+                        
+                        <%= link_to 'Editar', edit_use_case_path(@use_case) %> |
+                        <%= link_to 'Voltar', use_case_path %>
+                       
+                    </div>
+                    <!-- /.col-lg-12 -->
+                </div>
+                <!-- /.row -->
+            </div>
+            <!-- /.container-fluid -->
         </div>
-        <!-- /.row -->
-    </div>
-    <!-- /.container-fluid -->
+        <!-- /.content -->
 </div>
 <!-- /#page-wrapper -->

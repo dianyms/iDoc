@@ -45,20 +45,23 @@
                             <td><%= scenario.description %></td>
                             <td><%= scenario.scenario_type %></td>
                             <td><%= scenario.use_case.name %></td>
-                            <td><%= link_to scenario, class: "btn default btn-xs red" do %>
-                                  <i class="fa fa-edit fa-fw"></i>  
-                                  Gerenciar
-                               <% end %> 
-                           
-                            <%= link_to edit_scenario_path(scenario), class: "btn default btn-xs purple" do %>
-                                  <i class="fa fa-edit fa-fw"></i>  
-                                  Editar
-                            <% end %> 
-                           <%= link_to scenario, method: :delete, data: { confirm: 'Are you sure?'},
-                                         class: "btn default btn-xs black" do %>
-                                        <i class="fa fa-times fa-fw"></i>  
-                                        Excluir
-                                 <% end %>  
+                            
+                             <td class="last links">
+                              <ul class="inline list-inline">
+                                 <%= link_to scenario, class: "btn default btn-xs blue" do %>
+                                      <i class="fa fa-info fa-fw"></i>  
+                                   <% end %> 
+                               
+                                   <%= link_to edit_scenario_path(scenario), class: "btn default btn-xs purple" do %>
+                                          <i class="fa fa-edit fa-fw"></i>  
+                                          
+                                   <% end %> 
+                                   
+                                   <%= link_to scenario, method: :delete, data: { confirm: 'Are you sure?'}, class: "btn default btn-xs red" do %>
+                                          <i class="fa fa-times fa-fw"></i>  
+                                   <% end %> 
+                              </ul>
+                            </td>
                           </tr>
                         <% end %>
                       </tbody>

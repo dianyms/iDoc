@@ -11,7 +11,6 @@
                       <th>Nome</th>
                       <th>Descrição</th>
                       <th></th>
-                      <th></th>
                     </tr>
                   </thead>
                   <tbody>
@@ -20,17 +19,20 @@
                       <tr>
                         <td><%= requirement.name %></td>
                         <td><%= requirement.description %></td>
-                        <td><%= link_to edit_requirement_path(requirement), class: "btn default btn-xs purple" do %>
-                             <i class="fa fa-edit fa-fw"></i>  
-                                Editar
-                             <% end %> </td>
+                        
+                        <td class="last links">
+                            <ul class="inline list-inline">
                              
-                        <td><%= link_to requirement, method: :delete, data: { confirm: 'Are you sure?'},
-                                     class: "btn default btn-xs black" do %>
-                                    <i class="fa fa-times fa-fw"></i>  
-                                    Excluir
-                             <% end %> 
-                          </td>
+                               <%= link_to edit_requirement_path(requirement), class: "btn default btn-xs purple" do %>
+                                      <i class="fa fa-edit fa-fw"></i>
+                               <% end %> 
+                               
+                                <%= link_to requirement, method: :delete, data: { confirm: 'Are you sure?'},
+                                   class: "btn default btn-xs red" do %>
+                                  <i class="fa fa-times fa-fw"></i>  
+                                <% end %> 
+                            </ul>
+                        </td>
                       </tr>
                       <% end %>
                     <% end %>

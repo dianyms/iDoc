@@ -1,31 +1,39 @@
 <!-- Page Content -->
 <div id="page-wrapper">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-lg-12">
-                <p id="notice"><%= notice %></p>
-                <p>
-                  <strong>Sequence:</strong>
-                  <%= @step_scenario.sequence %>
-                </p>
-                
-                <p>
-                  <strong>Description:</strong>
-                  <%= @step_scenario.description %>
-                </p>
-                
-                <p>
-                  <strong>Scenario:</strong>
-                  <%= @step_scenario.scenario %>
-                </p>
-                
-                <%= link_to 'Edit', edit_step_scenario_path(@step_scenario) %> |
-                <%= link_to 'Back', step_scenarios_path %>
+  <div class="content" data-pjax-container=""><script>
+          $('.nav.nav-pills li.active').removeClass('active');
+          $('.nav.nav-pills li[data-model="project"]').addClass('active');
+            </script>
+            <div class="page-header">
+              <h1 class="">Passo Cenário</h1>
             </div>
-            <!-- /.col-lg-12 -->
-        </div>
-        <!-- /.row -->
-    </div>
-    <!-- /.container-fluid -->
+          <div class="container-fluid">
+              <div class="row">
+                  <div class="col-lg-12">
+                       <p>
+                        <strong>Sequência:</strong>
+                        <%= @step_scenario.sequence %>
+                      </p>
+                      
+                      <p>
+                        <strong>Descrição:</strong>
+                        <%= @step_scenario.description %>
+                      </p>
+                      
+                      <p>
+                        <strong>Cenário:</strong>
+                        <%= @step_scenario.scenario.name %>
+                      </p>
+                      
+                      <%= link_to 'Editar', edit_step_scenario_path(@step_scenario) %> |
+                      <%= link_to 'Voltar', step_scenarios_path %>
+                  </div>
+                  <!-- /.col-lg-12 -->
+              </div>
+              <!-- /.row -->
+          </div>
+          <!-- /.container-fluid -->
+      </div>
+      <!-- /.content -->
 </div>
 <!-- /#page-wrapper -->

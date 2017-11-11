@@ -43,19 +43,25 @@
                              <td><%= @project.creation_date.strftime("%d/%m/%Y")%></td>
                              <td><%= @project.delivery_date.strftime("%d/%m/%Y")%></td>
                              
-                             <td><%= link_to project_manager_path(@project.id), class: "btn default btn-xs red" do %>
-                                    <i class="fa fa-edit fa-fw"></i>  
-                                    Gerenciar
-                                 <% end %> 
-                             
-                             <%= link_to edit_project_path(@project), class: "btn default btn-xs purple" do %>
-                                    <i class="fa fa-edit fa-fw"></i>  
-                                    Editar
-                             <% end %> 
-                             
-                             <button type="submit" class="btn default btn-xs black"><i class="fa  fa-times fa-fw"></i> Excluir</button></td>
+                             <td class="last links">
+                              <ul class="inline list-inline">
+                                 <%= link_to project_manager_path(@project.id), class: "btn default btn-xs blue" do %>
+                                      <i class="fa fa-info fa-fw"></i>  
+                                   <% end %> 
+                               
+                                   <%= link_to edit_project_path(@project), class: "btn default btn-xs purple" do %>
+                                          <i class="fa fa-edit fa-fw"></i>  
+                                          
+                                   <% end %> 
+                                   
+                                   <%= link_to edit_project_path(@project), class: "btn default btn-xs red" do %>
+                                          <i class="fa fa-times fa-fw"></i>  
+                                   <% end %> 
+                              </ul>
+                            </td>
                            </tr>
                             <% end %>
+                            
                           <% else %>
                             <p> 
                               <strong>Vazio</strong>
