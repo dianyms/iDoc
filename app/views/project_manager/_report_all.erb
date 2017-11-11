@@ -6,13 +6,13 @@
                     <i class="fa fa-tasks fa-5x"></i>
                 </div>
                 <div class="col-xs-9 text-right">
-                    <div>Matriz de Rastreabilidade</div>
+                    <div>Completo</div>
                 </div>
             </div>
         </div>
         <a href="#">
             <div class="panel-footer">
-                  <%= link_to "Gerar Relatório", report_traceability_matrix_path(@use_case, format: "pdf") %>
+                  <%= link_to "Gerar Relatório", report_all_path(@project_manager, format: "pdf") %>
                 <span class="pull-left"></span>
                 <div class="clearfix"></div>
             </div>
