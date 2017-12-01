@@ -52,13 +52,6 @@ RSpec.describe StepScenariosController, type: :controller do
     end
   end
 
-  describe "GET #new" do
-    it "assigns a new step_scenario as @step_scenario" do
-      get :new, params: {}, session: valid_session
-      expect(assigns(:step_scenario)).to be_a_new(StepScenario)
-    end
-  end
-
   describe "GET #edit" do
     it "assigns the requested step_scenario as @step_scenario" do
       step_scenario = StepScenario.create! valid_attributes

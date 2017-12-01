@@ -52,13 +52,6 @@ RSpec.describe ProjectUsersController, type: :controller do
     end
   end
 
-  describe "GET #new" do
-    it "assigns a new project_user as @project_user" do
-      get :new, params: {}, session: valid_session
-      expect(assigns(:project_user)).to be_a_new(ProjectUser)
-    end
-  end
-
   describe "GET #edit" do
     it "assigns the requested project_user as @project_user" do
       project_user = ProjectUser.create! valid_attributes

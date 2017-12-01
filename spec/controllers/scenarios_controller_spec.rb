@@ -52,13 +52,6 @@ RSpec.describe ScenariosController, type: :controller do
     end
   end
 
-  describe "GET #new" do
-    it "assigns a new scenario as @scenario" do
-      get :new, params: {}, session: valid_session
-      expect(assigns(:scenario)).to be_a_new(Scenario)
-    end
-  end
-
   describe "GET #edit" do
     it "assigns the requested scenario as @scenario" do
       scenario = Scenario.create! valid_attributes

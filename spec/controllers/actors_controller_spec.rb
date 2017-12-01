@@ -34,13 +34,6 @@ RSpec.describe ActorsController, type: :controller do
     end
   end
 
-  describe "GET #new" do
-    it "assigns a new actor as @actor" do
-      get :new, params: {}, session: valid_session
-      expect(assigns(:actor)).to be_a_new(Actor)
-    end
-  end
-
   describe "GET #edit" do
     it "assigns the requested actor as @actor" do
       actor = Actor.create! valid_attributes

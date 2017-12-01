@@ -30,6 +30,8 @@
                               <th>Descrição</th>
                               <th>Requisito</th>
                               <th></th>
+                              <th></th>
+                              <th></th>
                             </tr>
                           </thead>
                           
@@ -38,19 +40,22 @@
                               <tr>
                                 <td><%= use_case.name %></td>
                                 <td><%= use_case.description %></td>
-                                <td><%= use_case.requirement_id %></td>
+                                <td><%= use_case.requirement.name %></td>
                                 
                                 <td class="last links">
                                   <ul class="inline list-inline">
                                      <%= link_to use_case, class: "btn default btn-xs blue" do %>
                                           <i class="fa fa-info fa-fw"></i>  
                                        <% end %> 
-                                   
+                                </td>
+                                
+                                <td class="last links">
                                        <%= link_to edit_use_case_path(use_case), class: "btn default btn-xs purple" do %>
                                               <i class="fa fa-edit fa-fw"></i>  
-                                              
                                        <% end %> 
-                                       
+                                </td>
+                                
+                                <td>
                                        <%= link_to use_case, class: "btn default btn-xs red" do %>
                                               <i class="fa fa-times fa-fw"></i>  
                                        <% end %> 

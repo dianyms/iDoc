@@ -52,13 +52,6 @@ RSpec.describe ReviewsController, type: :controller do
     end
   end
 
-  describe "GET #new" do
-    it "assigns a new review as @review" do
-      get :new, params: {}, session: valid_session
-      expect(assigns(:review)).to be_a_new(Review)
-    end
-  end
-
   describe "GET #edit" do
     it "assigns the requested review as @review" do
       review = Review.create! valid_attributes

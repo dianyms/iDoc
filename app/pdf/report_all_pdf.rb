@@ -13,6 +13,7 @@ class ReportAllPdf < Prawn::Document
         report_glossary
         report_requirements
         report_use_case
+        report_matriz
     end
     
     def title(name)
@@ -153,7 +154,7 @@ class ReportAllPdf < Prawn::Document
         @scenario.each do |item|
             if item.scenario_type == tipo
                 move_down 20
-                text @cont.to_s +".3. Cenário " + tipo, size: 13, style: :bold
+                text ".3. Cenário " + tipo, size: 13, style: :bold
                 text  item.description, size: 12, style: :bold
                line_items_step_scenario(item.id)
              end
@@ -168,5 +169,42 @@ class ReportAllPdf < Prawn::Document
         @step_scenarios.each do |step| 
             text "  " + step.sequence + ". " +  step.description, size: 12
         end
+    end
+    
+    def report_matriz
+        move_down 20
+        text "Matriz de Rastreabilidade", size: 15, style: :bold
+        move_down 6
+        
+        requisitos = Array.new
+        
+         @requirement.each do |requirement| 
+             if(requirement.requirement_type == "Funcional")
+                requisitos.append(requirement.name)
+            end
+        end
+        
+        data = [["  ", *requisitos]]
+        
+        @usecase.each do |usecase| 
+            matriz = Array.new
+            
+            requisitos.each do |requisito|
+                if (usecase.requirement.name == requisito)
+                    matriz.append("X")
+                else
+                    matriz.append(" ")
+                end
+            end
+
+            data += [[usecase.name, *matriz]]
+        end
+           
+        table data, :cell_style => { :align => :center } do
+            row(0).font_style = :bold
+            row(0).background_color = "DDDDDD"
+            self.header = true
+        end
+        
     end
 end

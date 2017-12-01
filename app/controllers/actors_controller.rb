@@ -15,7 +15,6 @@ class ActorsController < ProjectManagerController
   # GET /actors/new
   def new
     @actor = Actor.new
-    @use_case_options_select = UseCase.where(project_id: current_project.id)
   end
 
   # GET /actors/1/edit

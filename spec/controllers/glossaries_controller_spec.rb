@@ -52,13 +52,6 @@ RSpec.describe GlossariesController, type: :controller do
     end
   end
 
-  describe "GET #new" do
-    it "assigns a new glossary as @glossary" do
-      get :new, params: {}, session: valid_session
-      expect(assigns(:glossary)).to be_a_new(Glossary)
-    end
-  end
-
   describe "GET #edit" do
     it "assigns the requested glossary as @glossary" do
       glossary = Glossary.create! valid_attributes

@@ -19,7 +19,7 @@
 
    <div class="form-group">
      <label>Caso de Uso</label>
-     <%= collection_select(:actor, :use_case_id, @use_case_options_select, :id, :name, {}, {class: "form-control"}) %>
+     <%= collection_select(:actor, :use_case_id, UseCase.where(project_id: current_project.id), :id, :name, {}, {class: "form-control"}) %>
   </div>
 
     <button type="submit" class="btn btn-primary">Salvar<i class="fa fa-check pull-left"></i>

@@ -52,13 +52,6 @@ RSpec.describe UseCasesController, type: :controller do
     end
   end
 
-  describe "GET #new" do
-    it "assigns a new use_case as @use_case" do
-      get :new, params: {}, session: valid_session
-      expect(assigns(:use_case)).to be_a_new(UseCase)
-    end
-  end
-
   describe "GET #edit" do
     it "assigns the requested use_case as @use_case" do
       use_case = UseCase.create! valid_attributes
