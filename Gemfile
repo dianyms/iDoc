@@ -12,7 +12,7 @@ gem 'rails', '~> 5.0.2'
 #TO secure password
 gem 'bcrypt'
 # Use Puma as the app server
-gem 'puma', '~> 3.0'
+gem 'puma', '~> 4.3'
 # A free, open source, Bootstrap admin theme created by Start Bootstrap
 gem 'bootstrap_sb_admin_base_v2'
 
